@@ -2,7 +2,7 @@
 body {
     padding:0px;
     margin:0px;
-    margin-top:5px;
+    margin-top:55px;
 }
 
 .topDiv {
@@ -15,4 +15,8 @@ body {
 
 .bottomDiv {
     width:100%;
+}
+
+.marginRight {
+    margin-right:10px;
 }
