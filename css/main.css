@@ -6,7 +6,11 @@ body {
 }
 
 .topDiv {
+    z-index:1;
     width:100%;
+    height:600px;
+    background-image:url(../img/Desert.jpg);
+    background-size: 100%;
 }
 
 .centerDiv {
@@ -15,8 +19,18 @@ body {
 
 .bottomDiv {
     width:100%;
+    height:300px;
+    background-image:url(../img/Jellyfish.jpg);
+    background-size: 100%;
 }
 
 .marginRight {
     margin-right:10px;
+}
+
+.topArticleContent {
+    z-index:2;
+    position:relative;
+    width:600px;
+    margin:auto;
 }

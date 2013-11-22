@@ -2,28 +2,29 @@
 <html lang="en">
     
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="include/bootstrap-3.0.2/css/bootstrap.min.css">
 <!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="include/bootstrap-3.0.2/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
     
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery.js"></script>    
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>    
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="include/bootstrap-3.0.2/js/bootstrap.min.js"></script>
+
 <script src="js/holder.js"></script>
-
-
-
-
-
-
 
 <head>
 	<title>Portfolio</title>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script type="text/javascript">
+       /* $(document).ready({
+            skrollr.init();
+        })*/
+    </script>
 	
 </head>
 <body>
@@ -40,10 +41,11 @@
                     <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-asterisk marginRight"></i>Portfolio</a>
                   </div>
                 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">1st Link</a></li>
-                        <li ><a href="#">2nd Link</a></li> 
+                        <li class="active"><a href="#">Link1</a></li>
+                        <li ><a href="#">Link2</a></li>
+                        <li ><a href="#">Link3</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -52,13 +54,13 @@
                               <li><a href="#">Something else here</a></li>
                               <li class="divider"></li>
                               <li><a href="#">Separated link</a></li>
-                              <li class="divider"></li>
-                              <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
                     </ul>
                      <form class="navbar-form navbar-right" role="logIn">
-                        <button type="submit" class="btn btn-default">Sign In</button>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Sign In</button>
+                        </div>
                     </form>
                     <form class="navbar-form navbar-right" role="search">
                         <div class="form-group">
@@ -73,11 +75,20 @@
             
         </header>
 	
-		<div id="topDiv" class="topDiv">
-            <div class="jumbotron text-center" >
-              <h1>Welcome bitches!</h1>
-              <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-            </div>
+		<div id="topDiv" class="jumbotron text-center topDiv" data-0="background-position:0px 0px;" data-500="background-position:0px -250px;">
+            <article class="topArticleContent">
+                <header>
+                    <h1>Welcome Bitches!</h1>
+
+                  </header>
+                  <p>The apple is the pomaceous fruit of the apple tree...</p>
+                  ...
+                  <footer>
+                    <p><small>ima footer Creative</small></p>
+                  </footer>
+
+            </article>  
+            
         </div>
 		<div id="centerDiv" class="centerDiv container">
             <div class="row">
@@ -122,13 +133,18 @@
                 </div>
             </div>
         </div>
-		<div id="bottomDiv" class="bottomDiv text-center">
-            <div class="jumbotron">
+		<div id="bottomDiv" class="jumbotron bottomDiv text-center">
               <h3>Div3</h1>
               <p>ipse lorum jah</p>
               <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-            </div></div>
+        </div>
 	</div>							
-	
+<script src="include/skrollr-master/skrollr.min.js"></script>
+<script type="text/javascript">
+    skrollr.init({
+        forceHeight: false,
+        smoothScrolling: false
+    });
+</script>
 </body>
 </html>
