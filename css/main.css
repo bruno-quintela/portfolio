@@ -3,6 +3,7 @@ body {
     padding:0px;
     margin:0px;
     margin-top:55px;
+    overflow:hidden;
 }
 
 .topDiv {
@@ -16,9 +17,6 @@ body {
     width:1200px;
     margin:auto;
     overflow:hidden;
-    -moz-box-shadow: 0 0 2px 2px #ccc;
-    -webkit-box-shadow: 0 0 2px 2px #ccc;
-    box-shadow: 0 0 2px 2px #ccc;
 }
 
 .bottomDiv {
@@ -148,21 +146,21 @@ body {
     background-color: transparent;
 }
 .ca-menu li:hover .ca-icon{
-    color: #666;
-    text-shadow:0px 15px 15px #666;
+    color: #006699;
+    text-shadow:0px 15px 15px #006699;
     -webkit-animation: smallToBig 300ms ease;
     -moz-animation: smallToBig 300ms ease;
     -ms-animation: smallToBig 300ms ease;
 }
 .ca-menu li:hover .ca-main{
-     text-shadow:0px 5px 15px #666;
+    color: #006699;
+     text-shadow:0px 0px 1px #006699;
      -webkit-animation: moveFromRight 300ms ease;
     -moz-animation: moveFromRight 300ms ease;
     -ms-animation: moveFromRight 300ms ease;
 }
 .ca-menu li:hover .ca-sub{
     color: #000;
-    text-shadow:0px 0px 15px #666;
     -webkit-animation: moveFromBottom 300ms ease;
     -moz-animation: moveFromBottom 300ms ease;
     -ms-animation: moveFromBottom 300ms ease;
@@ -246,7 +244,7 @@ body {
     position:relative;
     left:0;
     margin:auto;
-    width:3600px;
+    width:6000px;
     height:200px;
 }
 
@@ -256,10 +254,5 @@ body {
     float:left;
     padding:10px;
     background:#fff;
-    border:1px solid;
 }
 
-.active
-{
-    color: green;
-}
