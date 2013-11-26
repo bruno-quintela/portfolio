@@ -3,7 +3,6 @@ body {
     padding:0px;
     margin:0px;
     margin-top:55px;
-    overflow:hidden;
 }
 
 .topDiv {
@@ -22,8 +21,6 @@ body {
 .bottomDiv {
     width:100%;
     height:300px;
-    background-image:url(../img/Jellyfish.jpg);
-    background-size: 100%;
 }
 
 .marginRight {
@@ -152,6 +149,15 @@ body {
     -moz-animation: smallToBig 300ms ease;
     -ms-animation: smallToBig 300ms ease;
 }
+
+.ca-menu:active .ca-icon{
+    color: #006699;
+    text-shadow:0px 15px 15px #006699;
+    -webkit-animation: bigToSmall 300ms ease;
+    -moz-animation: bigToSmall 300ms ease;
+    -ms-animation: bigToSmall 300ms ease;
+}
+
 .ca-menu li:hover .ca-main{
     color: #006699;
      text-shadow:0px 0px 1px #006699;
@@ -165,9 +171,36 @@ body {
     -moz-animation: moveFromBottom 300ms ease;
     -ms-animation: moveFromBottom 300ms ease;
 }
+
+@-webkit-keyframes bigToSmall{
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(0.5);
+    }
+}
+@-moz-keyframes bigToSmall{
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(0.5);
+    }
+}
+@-ms-keyframes smallToBig{
+    from {
+        -webkit-transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(0.5);
+    }
+}
+
+
 @-webkit-keyframes smallToBig{
     from {
-        -webkit-transform: scale(0.9);
+        -webkit-transform: scale(0.5);
     }
     to {
         -webkit-transform: scale(1);
@@ -175,7 +208,7 @@ body {
 }
 @-moz-keyframes smallToBig{
     from {
-        -moz-transform: scale(0.9);
+        -moz-transform: scale(0.5);
     }
     to {
         -moz-transform: scale(1);
@@ -249,10 +282,19 @@ body {
 }
 
 .scrollableArticle {
-    width:1200px;
+    width:1190px;
     height:100%;
     float:left;
     padding:10px;
     background:#fff;
 }
 
+
+#article1 {
+    -moz-column-count: 3;
+    -moz-column-gap: 5px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 5px;
+    column-count: 3;
+    column-gap: 5px;
+}

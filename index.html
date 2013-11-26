@@ -34,7 +34,8 @@
        /* $(document).ready({
             skrollr.init();
         })*/
-        function goto(id, t){
+        function goto(id, nextId, t){
+    
             //animate to the div id.
             $(".wrapper").animate({"left": -($(id).position().left)}, 500);
          
@@ -102,7 +103,7 @@
 		<section id="menu" class="container topDiv">
            <ul class="ca-menu">
                     <li>
-                        <a href="#" onClick="goto('#article1', this); return false">
+                        <a href="#" onClick="goto('#article1','#article2', this); return false">
                             <span class="ca-icon">A</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Exceptional Service</h2>
@@ -111,7 +112,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" onClick="goto('#article2', this); return false">
+                        <a href="#" onClick="goto('#article2','#article3', this); return false">
                             <span class="ca-icon">I</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Creative Storytelling</h2>
@@ -120,7 +121,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" onClick="goto('#article3', this); return false">
+                        <a href="#" onClick="goto('#article3','#article4', this); return false">
                             <span class="ca-icon">C</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Infographical Education</h2>
@@ -129,7 +130,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"  onClick="goto('#article4', this); return false">
+                        <a href="#"  onClick="goto('#article4','#article5', this); return false">
                             <span class="ca-icon">S</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Sophisticated Team</h2>
@@ -138,7 +139,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"  onClick="goto('#article5', this); return false">
+                        <a href="#"  onClick="goto('#article5',null, this); return false">
                             <span class="ca-icon">d</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">Unconditional Support</h2>
@@ -152,15 +153,31 @@
 		<div id="centerDiv" class="centerDiv">
             <section class="wrapper">
                 <article id="article1" class="scrollableArticle">
+                    
+                    
+                    <ul>
+                        <li>
                     <header>  
-            <h2>This is the title of a blog post</h2>  
+            <h2>col 1</h2>  
             <p>Posted on <time datetime="2009-06-29T23:31:45+01:00">June 29th 2009</time> by <a href="#">Mads Kjaer</a> - <a href="#comments">3 comments</a></p>  
         </header>  
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu orci imperdiet nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum vel, fermentum id tellus. Proin metus odio, ultricies eu pharetra dictum, laoreet id odio...</p>  
+        <p>Lodictum</p></li><li>  <header>  
+            <h2>col 3</h2>  
+            <p>Posted on <time datetime="2009-06-29T23:31:45+01:00">June 29th 2009</time> by <a href="#">Mads Kjaer</a> - <a href="#comments">3 comments</a></p>  
+        </header>  
+        <p>Lorem ipsr sit amet, cs eu pharetra dictum</p>  </li><li>
+                    <header>  
+            <h2>Tcol 2</h2>  
+            <p>Posted on <time datetime="2009-06-29T23:31:45+01:00">June 29th 2009</time> by <a href="#">Mads Kjaer</a> - <a href="#comments">3 comments</a></p>  
+        </header>  
+        <p>Lorem ipsum dolor sa dictum</p>  
+                        </li>
+                        
+                        </ul>
                 </article>
                 <article id="article2" class="scrollableArticle">
                     <header>  
-            <h2>This is the title of a blog post</h2>  
+            <h2>col 3</h2>  
             <p>Posted on <time datetime="2009-06-29T23:31:45+01:00">June 29th 2009</time> by <a href="#">Mads Kjaer</a> - <a href="#comments">3 comments</a></p>  
         </header>  
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu orci imperdiet nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum vel, fermentum id tellus. Proin metus odio, ultricies eu pharetra dictum, laoreet id odio...</p>  
