@@ -32,12 +32,10 @@
 <script src="include/easing/jquery.easing.compatibility.js"></script>
     
 <!-- Jquery sticky -->
-<script src="include/sticky/jquery.sticky.js"></script>    
-    
-
-
-
-    
+<script src="include/sticky/jquery.sticky.js"></script>
+ 
+<!-- 3d scripts -->
+<script type="text/javascript" src="include/3d/Stats.js"></script>
 
 <script src="js/holder.js"></script>
 
@@ -50,10 +48,22 @@
     <meta name="author" content="Bruno Quintela" />
     
     <script type="text/javascript">
+       
         $(document).ready(function (){
+            
+            // FPS stats count
+            stats = new Stats();
+			stats.domElement.style.position = 'absolute';
+			stats.domElement.style.top = '0px';
+			$('#3dcontainer')[0].appendChild( stats.domElement );
+			setInterval( function(){
+				stats.update();
+			}, 1000 / 60 );
+
             
             adjustHeaderHeight();
             //$("nav").sticky({topSpacing:0});
+            
             
            $('#textWall').parallax({
               calibrateX: false,
@@ -63,37 +73,16 @@
               limitX: false,
               limitY: false,
               scalarX: 2,
-              scalarY: 20,
+              scalarY: 2,
               frictionX: 0.2,
               frictionY: 0.2
             });
             
-            !(function ($doc, $win) {
-            var screenWidth = $win.screen.width / 2,
-                screenHeight = $win.screen.height / 2,
-                $elem = $doc.querySelectorAll('#textWall')[0],
-                validPropertyPrefix = '',
-                otherProperty = 'perspective(600px)';
+            setElementPerspective($('header')[0]);
 
-                if(typeof $elem.style.webkitTransform == 'string') {
-                    validPropertyPrefix = 'webkitTransform';
-                } else {
-                    if (typeof $elem.style.MozTransform == 'string') {
-                        validPropertyPrefix = 'MozTransform';
-                    }
-                }
-
-            $doc.addEventListener('mousemove', function (e) {
-                // vars
-                var centroX     = e.clientX - screenWidth,
-                    centroY     = screenHeight - (e.clientY + 13),
-                    degX   = centroX * 0.005,
-                    degY   = centroY * 0.005
-
-                // Seta o rotate do elemento
-                $elem.style[validPropertyPrefix] = otherProperty + 'rotateY('+ degX +'deg)  rotateX('+ degY +'deg)';
-            });
-        })(document, window);
+            removeElementPerspective('header');
+            
+            
             
             
            window.setInterval(function()
@@ -103,8 +92,40 @@
                                    randomizeElementPosition('.mediumBold',0, 160);
                                     randomizeElementPosition('.large',0, 160);
                                }
-                               ,500);
+                               ,3000);
         });
+        
+        
+        
+        function setElementPerspective(elem) {
+            var screenWidth = window.screen.width / 2,
+                screenHeight = window.screen.height / 2,
+                validPropertyPrefix = '',
+                otherProperty = 'perspective(600px)';
+
+                if(typeof elem.style.webkitTransform == 'string') {
+                    validPropertyPrefix = 'webkitTransform';
+                } else {
+                    if (typeof elem.style.MozTransform == 'string') {
+                        validPropertyPrefix = 'MozTransform';
+                    }
+                }
+
+            document.addEventListener('mousemove', function (e) {
+                // vars
+                var centroX     = e.clientX - screenWidth,
+                    centroY     = screenHeight - (e.clientY + 13),
+                    degX   = centroX * 0.005,
+                    degY   = centroY * 0.005
+
+                // Seta o rotate do elemento
+                elem.style[validPropertyPrefix] = otherProperty + 'rotateY('+ degX +'deg)  rotateX('+ degY +'deg)';
+            });
+        }
+        
+        function removeElementPerspective(elementId) {
+            document.removeEventListener('mousemove',arguments.callee,false);
+        }
             
         function goto(id, t){
             //animate to the div id.
@@ -113,14 +134,14 @@
         
         function adjustHeaderHeight() {
             var wh = $(window).height();
-                $('header').css({height: wh});
+            //$('header').css({height: wh});
         }
         
         function randomizeElementPosition(id,min,max)
         {
             var randomOfset =  Math.floor(Math.random() * (max - min + 1)) + min;
-            $(id).animate({"margin-left": randomOfset}, 500,'easeInOutElastic');
-            $(id).animate({"margin-right": randomOfset}, 500,'easeInOutElastic');
+            $(id).animate({"margin-left": randomOfset}, 1000,'easeInOutElastic');
+            $(id).animate({"margin-right": randomOfset}, 1000,'easeInOutElastic');
             
         }
         
@@ -140,6 +161,9 @@
             NAVIGATION BAR
         -->
         <header>
+             <div id="3dcontainer">
+
+            </div>
         <nav id="textWall" class="textWall" >
                 <div class="layer overlayText" data-depth="0.2">
                     <h1>Portfolio</h1>
@@ -156,6 +180,103 @@
                     <br><span class="author">Salvador Dali</span></h3>
                 </div>
         </nav>
+           
+  
+
+
+        
+        </header>
+    </div>
+    <div id="wrapper">
+        <!--
+            NAVIGATION BAR
+        -->
+        <header>
+             <div id="3dcontainer">
+
+            </div>
+        <nav id="textWall" class="textWall" >
+                <div class="layer overlayText" data-depth="0.2">
+                    <h1>Portfolio</h1>
+                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
+                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
+                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
+                    <br><span class="author">Salvador Dali</span></h3>
+                </div>
+                <div class="layer bottomText" data-depth="0.4">
+                    <h1>Portfolio</h1>
+                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
+                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
+                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
+                    <br><span class="author">Salvador Dali</span></h3>
+                </div>
+        </nav>
+           
+  
+
+
+        
+        </header>
+    </div>
+    <div id="wrapper">
+        <!--
+            NAVIGATION BAR
+        -->
+        <header>
+             <div id="3dcontainer">
+
+            </div>
+        <nav id="textWall" class="textWall" >
+                <div class="layer overlayText" data-depth="0.2">
+                    <h1>Portfolio</h1>
+                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
+                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
+                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
+                    <br><span class="author">Salvador Dali</span></h3>
+                </div>
+                <div class="layer bottomText" data-depth="0.4">
+                    <h1>Portfolio</h1>
+                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
+                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
+                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
+                    <br><span class="author">Salvador Dali</span></h3>
+                </div>
+        </nav>
+           
+  
+
+
+        
+        </header>
+    </div>
+    <div id="wrapper">
+        <!--
+            NAVIGATION BAR
+        -->
+        <header>
+             <div id="3dcontainer">
+
+            </div>
+        <nav id="textWall" class="textWall" >
+                <div class="layer overlayText" data-depth="0.2">
+                    <h1>Portfolio</h1>
+                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
+                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
+                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
+                    <br><span class="author">Salvador Dali</span></h3>
+                </div>
+                <div class="layer bottomText" data-depth="0.4">
+                    <h1>Portfolio</h1>
+                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
+                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
+                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
+                    <br><span class="author">Salvador Dali</span></h3>
+                </div>
+        </nav>
+           
+  
+
+
         
         </header>
     </div>
@@ -164,5 +285,13 @@
 <script src="include/wagerfield-parallax/requestAnimationFrame.js"></script>    
 <script src="include/wagerfield-parallax/parallax.js"></script>    
 <script src="include/wagerfield-parallax/jquery.parallax.js"></script>
+    <script type="text/javascript">
+
+            
+			
+			
+			
+
+		</script>
 </body>
 </html>
