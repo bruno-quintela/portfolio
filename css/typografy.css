@@ -4,9 +4,8 @@
 .textWall h1, h2, h3, h4 {
 	font-weight: 300;
 	font-family: 'Oswald',sans-serif;
-
+    background-color:transparent;
 	margin: 0 0 6px;
-    text-shadow:0px 3px 1px #555;
 }
 
 .textWall h1 {
@@ -32,13 +31,6 @@
 .textWall h2.white { color: #222;}
 
 .textWall h3 {font-size: 22px; line-height: 1; color: #555;}
-.textWall h3.sectionTitle {
-    border-bottom: 1px solid #cacaca;
-    font-size: 28px;
-    line-height: 30px;
-    margin-bottom: 10px;
-    padding: 26px 0 6px;
-}
 .textWall .small {font-size: 36px; font-weight:300;}
 .textWall .smallBold {font-size: 36px; font-weight:700;}
 .textWall .medium {font-size: 44px; text-transform: uppercase;}

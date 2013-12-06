@@ -20,31 +20,47 @@ ol, ul {
 	list-style: none;
 }
 
+#wrapper {
+    position:relative;
+    width:80%;
+    height: 500px;
+}
+
 header
 {
-    position:relative;
+    position:absolute;
     background-color:transparent;
-	z-index:1;
-    background-image:url(../img/8_53.png);
+	
+    /*background-image:url(../img/8_53.png);
     background-position:right;
     background-repeat:no-repeat;
-    background-position:right;
-    border:4px solid #000;
+    background-position:right;*/
     margin:auto;
-    margin-top:10px;
-    width:90%;
-    height: 500px;
-    box-shadow: 0px 5px 15px #000;
 }
 
-.textWall
+.layer1
 {
-    margin-top:50px;
     background-color:transparent;
-	width: 100%;
-	position: relative;
+    opacity:0.8;
+    color:#000;
+    border: 2px solid #000;
 }
 
+.layer2
+{
+    background-color:transparent;
+    color:red;
+    opacity:0.5;
+    border: 2px solid red;
+}
+
+.layer3
+{
+    background-color:transparent;
+    color:green;
+    opacity:0.5;
+    border: 2px solid green;
+}
 
 
 /***
@@ -64,19 +80,19 @@ header
 
 
 .overlayText {
-    z-index:3;
-    color: #000;
     position:absolute;
     top:0px;
     background-color: transparent;
-	z-index: 1000;
 	text-align: right;
+    transition: all 0.5s ease;
+
+
     
 }
 
 .bottomText {
-    z-index:2;
-    color: #000;
+    color: transparent;
+    text-shadow: 0px 0px 1px #006699;
     opacity: 0.5;
     position:absolute;
     top:0px;
@@ -87,4 +103,6 @@ header
 
 
 }
+
+
 
