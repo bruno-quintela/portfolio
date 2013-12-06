@@ -1,7 +1,7 @@
 /** RESET STYLE **/
 
 html, body {
-    height: 100%;
+
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -31,7 +31,6 @@ header
 {
     position:absolute;
     background-color:transparent;
-	
     /*background-image:url(../img/8_53.png);
     background-position:right;
     background-repeat:no-repeat;
@@ -93,14 +92,12 @@ header
 
 .bottomText {
     color: transparent;
-    text-shadow: 0px 0px 1px #006699;
-    opacity: 0.5;
+    text-shadow: 0px 0px 10px green;
     position:absolute;
     top:0px;
-    padding-left:5px;
-    padding-top:5px;
-    background: #FFF;
+    background-color: transparent;
 	text-align: right;
+    transition: all 0.5s ease;
 
 
 }
