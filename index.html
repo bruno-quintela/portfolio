@@ -38,6 +38,7 @@
 <script type="text/javascript" src="include/3d/Stats.js"></script>
 
 <script src="js/holder.js"></script>
+<script src="js/main.js"></script>
 
 <head>
 	<title>Portfolio</title>
@@ -72,8 +73,8 @@
               invertY: true,
               limitX: true,
               limitY: true,
-              scalarX: 5,
-              scalarY: 5,
+              scalarX: 10,
+              scalarY: 20,
               frictionX: 0.2,
               frictionY: 0.2
             });
@@ -98,102 +99,56 @@
         
         
         
-        function setElementPerspective(elem,perspective) {
-            var screenWidth = window.screen.width / 2,
-                screenHeight = window.screen.height / 2,
-                validPropertyPrefix = '',
-                otherProperty = 'perspective(250px)';
-
-                if(typeof elem.style.webkitTransform == 'string') {
-                    validPropertyPrefix = 'webkitTransform';
-                } else {
-                    if (typeof elem.style.MozTransform == 'string') {
-                        validPropertyPrefix = 'MozTransform';
-                    }
-                }
-
-            document.addEventListener('mousemove', function (e) {
-                // vars
-                var centroX     = e.clientX - screenWidth,
-                    centroY     = screenHeight - (e.clientY ),
-                    degX   = centroX * 0.005,
-                    degY   = centroY * 0.005
-
-                // Seta o rotate do elemento
-                elem.style[validPropertyPrefix] = otherProperty + 'rotateY('+ degX +'deg)  rotateX('+ degY +'deg)';
-                
-            });
-        }
         
-        function removeElementPerspective(elementId) {
-            document.removeEventListener('mousemove',arguments.callee,false);
-        }
-            
-        function goto(id, t){
-            //animate to the div id.
-            $("html, body").animate({"scrollTop": ($(id).position().top)}, 1000,'easeOutBounce');
-        }
-        
-        function adjustHeaderHeight() {
-            var wh = $(window).height();
-            $('header').css({height: wh});
-        }
-        
-        function randomizeElementPosition(id,min,max)
-        {
-            var randomOfset =  Math.floor(Math.random() * (max - min + 1)) + min;
-            $(id).animate({"margin-left": randomOfset}, 1000,'easeInOutElastic');
-            $(id).animate({"margin-right": randomOfset}, 1000,'easeInOutElastic');
-            //$('.bottomText')[0].style['-webkit-mask-position'] = randomOfset+'px';
-            
-        }
-        
-        /*$(window).bind('resize',function () {
-                //Update slider height
-                adjustHeaderHeight();
-        });*/
-        
-       
+              
         
     </script>
 	
 </head>
 <body>
     <div id="statsDiv"></div>
-    <div id="wrapper">
-        <!--
-            NAVIGATION BAR
-        -->
-         <header class="layer1 layer" data-depth="0"><nav id="textWall" class="textWall" >
-                <div class="overlayText">
-                    <h1>Portfolio</h1>
-                    
-                </div>
-            </nav></header>
-        <header class="layer2 layer" data-depth="0.2"><nav id="textWall" class="textWall" >
-                <div class="overlayText">
-                    <h1>Portfolio</h1>
-                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
-                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
-                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
-                    <br><span class="author">Salvador Dali</span></h3>
-                </div>
-            </nav></header>
-        <header class="layer3 layer" data-depth="0.4"><nav id="textWall" class="textWall" >
-                <div class="overlayText">
-                    <h1>Portfolio</h1>
-                    <h3><span class="small">Those who do</span> <span class="smallBold">not want to</span>
-                    <br><span class="largeBold">want to</span> <span class="large">anything,</span>
-                    <br><span class="medium">produce</span><span class="mediumBold"> nothing.</span> 
-                    <br><span class="author">Salvador Dali</span></h3>
-                </div>
-            </nav></header>
-        
-         
-    </div>
+
+        <div id="wrapper">
+            
+            
+            <!--
+                NAVIGATION BAR
+            -->
+            <header class="layer3 layer" data-depth="0.4"><nav id="textWall" class="textWall" >
+                    <div class="overlayText">
+                        <h1>Portfolio</h1>
+
+                    </div>
+                </nav></header>
+            
+            <header class="layer2 layer" data-depth="0.2"><nav id="textWall" class="textWall" >
+                    <div class="overlayText">
+                        <h1>Portfolio</h1>
+                    </div>
+                </nav></header>
+            
+            <header class="layer1 layer" data-depth="0"><nav id="textWall" class="textWall" >
+                    <div style="width:100%;height:40px;background-color:#000;zindex:100000;">
+                        <nav id="buttonMenus">
+                            <ul>
+                                <li onclick="showHome();">home</li>
+                                <li onclick="showPortfolio();">portfolio</li>
+                                <li onclick="showAbout();">about</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="overlayText">
+                        <h1>Portfolio</h1>
+                        
+                    </div>
+                </nav></header>
+            
+             
+        </div>
+
     
 <!-- Jquery parallax -->
- 
+<script src="include/wagerfield-parallax/requestAnimationFrame.js"></script> 
 <script src="include/wagerfield-parallax/jquery.parallax.js"></script>
 </body>
 </html>
